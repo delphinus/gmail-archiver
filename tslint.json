@@ -1,0 +1,30 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint:latest",
+        "tslint-config-prettier"
+    ],
+    "jsRules": {
+        "cyclomatic-complexity": [true, 10],
+        "no-console": false,
+        "prettier": true,
+        "quotemark": [true, "single"],
+        "semicolon": [true, "never"],
+        "trailing-comma": { "esSpecCompliant": true }
+    },
+    "rules": {
+        "array-type": [true, "array"],
+        "arrow-parens": false,
+        "cyclomatic-complexity": [true, 10],
+        "interface-name": [true, "never-prefix"],
+        "member-access": [true, "no-public"],
+        "no-console": false,
+        "no-submodule-imports": false,
+        "prettier": true,
+        "semicolon": [true, "never"],
+        "trailing-comma": {
+            "multiline": { "typeLieterals": "never" }
+        }
+    },
+    "rulesDirectory": []
+}
