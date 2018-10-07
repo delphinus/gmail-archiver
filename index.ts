@@ -1,21 +1,17 @@
 import { OAuth2Client } from "google-auth-library"
 import { gmail_v1 } from "googleapis"
 import { authorize } from "./authorize"
+import { generateMessages } from "./generate-messages"
 
-const listLabels = async (auth: OAuth2Client) => {
-    const gmail = new gmail_v1.Gmail({ auth })
-    const res = await gmail.users.labels.list({ userId: "me" })
-    const labels = res.data.labels
-    if (!labels || !labels.length) {
-        console.log("No labels found")
-        return
+const listMessages = async (auth: OAuth2Client) => {
+    for await (const message of generateMessages(auth)) {
+        console.log(message.id)
     }
-    labels.forEach(label => console.log(`- ${label.name}`))
 }
 ;(async () => {
     try {
         const auth = await authorize()
-        await listLabels(auth)
+        await listMessages(auth)
     } catch (err) {
         console.error(err)
         process.exit(1)
