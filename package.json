@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "find . \\( -path ./node_modules -o -path ./prettier.config.js \\) -prune -o -name '*.js' -exec rm -r {} \\;",
     "start": "ts-node index.ts"
   },
   "repository": {
