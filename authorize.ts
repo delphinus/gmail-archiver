@@ -7,7 +7,7 @@ import { promisify } from "util"
 const read = promisify(readFile)
 const write = promisify(writeFile)
 const CREDENTIAL_JSON = "client_id.json"
-const SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+const SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 const TOKEN_PATH = "token.json"
 
 interface CredentialJSON {
